@@ -1,0 +1,70 @@
+:root {
+    --bg-body: #151515;
+    --nav-bg: #2e2e2e;
+    --textmain: #ffffff;
+    --textHighlight: #dd4444;
+
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    /* font-family: 'Sofia Sans Extra Condensed', sans-serif; */
+    font-family: 'B612', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0 auto;
+    background-color: var(--bg-body);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding:0 1rem;
+    min-height: 100vh;
+    color:var(--textmain);
+    position: relative;
+    border-left: 0.2rem solid var(--textHighlight);
+    border-right: 0.2rem solid var(--textHighlight);
+    background-color: var(--bg-body);
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main{
+    flex:1;
+}
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu a {
+    color: var(--textmain);
+    margin: 0 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+}
+
+.menu a:hover {
+    background-color: var(--textHighlight);
+}
