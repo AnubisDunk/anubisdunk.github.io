@@ -1,25 +1,18 @@
 let content = document.querySelector("#content");
+getSkinData();
 
-let skins = {
-    name: "MP5 Playground",
-    img: "https://steamuserimages-a.akamaihd.net/ugc/2028351156741267123/3C460F21A163BDF9EB77228967B7A88ADC0C4687/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
-};
-
-for (let i = 0; i < 20; i++) {
-    content.appendChild(loadSkins());
-
-}
-
-async function getGitData() {
-    const res = await fetch('https://api.github.com/users/anubisdunk');
+async function getSkinData() {
+    const res = await fetch('http://localhost:8080/skins');
     const data = await res.json();
-    console.log(data);
-    return data;
+    for(const skin of data) {
+        content.appendChild(await loadSkins(skin));
+    }
+
 }
-getGitData();
-function loadSkins() {
+
+async function loadSkins(skins) {
     card = `
-    <img src="${skins.img}">
+    <img src="${skins.image}">
     <p>${skins.name}</p>
     `;
     let div = document.createElement('div');
