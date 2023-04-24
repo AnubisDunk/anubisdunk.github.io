@@ -3,6 +3,7 @@
     --nav-bg: #2e2e2e;
     --textmain: #ffffff;
     --textHighlight: #dd4444;
+    --green: #86bf3d;
 
 }
 
@@ -16,6 +17,12 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
+#myVideo {
+    position: fixed;
+    left:0;
+    bottom: 0;
+  }
 
 body {
     /* font-family: 'Sofia Sans Extra Condensed', sans-serif; */
@@ -39,7 +46,7 @@ body {
     position: relative;
     border-left: 0.2rem solid var(--textHighlight);
     border-right: 0.2rem solid var(--textHighlight);
-    background-color: var(--bg-body);
+    background-color: #151515c0;
 }
 header{
     width: 100%;

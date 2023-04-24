@@ -3,6 +3,7 @@
     --nav-bg: #2e2e2e;
     --textmain: #ffffff;
     --textHighlight: #dd4444;
+    --green: #86bf3d;
 
 }
 
@@ -30,22 +31,22 @@ body {
 
 #myVideo {
     position: fixed;
-    left:0;
+    left: 0;
     bottom: 0;
-  }
+}
+
 .wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1280px;
     margin: 0 auto;
     min-height: 100vh;
     position: relative;
     border-left: 0.2rem solid var(--textHighlight);
     border-right: 0.2rem solid var(--textHighlight);
-    background-color: var(--bg-body);
-    opacity: 0.9;
+    background-color: #151515bf;
     animation: 2s ease 0s 1 slideInFromLeft;
 }
 
@@ -55,18 +56,60 @@ nav {
     width: 100%;
     font-size: 2rem;
     display: flex;
+    flex: 0;
     padding: 0 2rem 0 2rem;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--nav-bg);
+    background-color: #2e2e2e9e;
 }
 
 .content {
     color: var(--textmain);
-    padding: 0 2rem 0 2rem;
+    padding: 2rem 2rem 0 2rem;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
     min-height: 100%;
 }
+
+.content h1{
+    display: flex;
+    justify-content: center;
+}
+#top{
+    font-size: 3rem;
+}
+
+.content span:nth-child(1) {
+    color: var(--textHighlight);
+    text-decoration: underline;
+    position: relative;
+    top: 1rem;
+    font-size: 3rem;
+}
+
+.content span:nth-child(2) {
+    color: var(--green);
+    font-size: 3rem;
+    position: relative;
+    top: -3rem;
+}
+
+.content span:nth-child(2)::after {
+    content: "";
+    /* display: block; */
+    width: 100%;
+    height: 0.25rem;
+    background-color: var(--green);
+    left: 0;
+    top: 0.1rem;
+    position: absolute;
+}
+
+.content selection {}
 
 footer {
     color: var(--textmain);
@@ -76,8 +119,7 @@ footer {
     width: 100%;
     height: 2rem;
     padding: 2rem;
-    background-color: var(--nav-bg);
-    opacity: 0.9;
+    background-color: #2e2e2e9e;
 }
 
 footer ion-icon {
@@ -115,7 +157,7 @@ nav h1:hover {
     font-weight: 800;
     font-size: 2rem;
     position: relative;
-    padding: 2rem 0;
+    padding: 0.5rem 0;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -158,8 +200,8 @@ nav h1:hover {
 }
 
 #logo {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border: 0.2rem solid var(--textHighlight);
     border-radius: 5rem;
 }
@@ -210,7 +252,7 @@ section h1 {
     right: 2rem;
 }
 
-@keyframes slideInFromLeft {
+/* @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
         opacity: 0;
@@ -222,4 +264,4 @@ section h1 {
         opacity: 0.9;
 
     }
-}
+} */
