@@ -6,15 +6,17 @@
 //     });
 // });
 //main
-let content = document.querySelector("#content");
+let rustContent = document.querySelector("#rust");
 getSkinData();
 
 async function getSkinData() {
     try {
+        rustContent.textContent = "Loading data";
         const res = await fetch('https://anubisdunk-serverloader.onrender.com/skins');
         const data = await res.json();
+        rustContent.textContent = "";
         for (const skin of data) {
-            content.appendChild(await loadSkins(skin));
+            rustContent.appendChild(await loadSkins(skin));
         }
     } catch (e) {
         console.log("404")

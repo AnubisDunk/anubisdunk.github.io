@@ -47,7 +47,7 @@ body {
     border-left: 0.2rem solid var(--textHighlight);
     border-right: 0.2rem solid var(--textHighlight);
     background-color: #151515bf;
-    animation: 2s ease 0s 1 slideInFromLeft;
+    /* animation: 2s ease 0s 1 slideInFromLeft; */
 }
 
 nav {
@@ -76,7 +76,11 @@ nav {
 }
 
 .content h1{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
     display: flex;
+    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
 #top{
@@ -86,8 +90,6 @@ nav {
 .content span:nth-child(1) {
     color: var(--textHighlight);
     text-decoration: underline;
-    position: relative;
-    top: 1rem;
     font-size: 3rem;
 }
 
@@ -95,7 +97,6 @@ nav {
     color: var(--green);
     font-size: 3rem;
     position: relative;
-    top: -3rem;
 }
 
 .content span:nth-child(2)::after {
@@ -105,7 +106,7 @@ nav {
     height: 0.25rem;
     background-color: var(--green);
     left: 0;
-    top: 0.1rem;
+    top: 0.6rem;
     position: absolute;
 }
 
@@ -166,7 +167,7 @@ nav h1:hover {
 .hero #bread {
     position: absolute;
     top: 6rem;
-    left: 8rem;
+    left: 6rem;
     cursor: grab;
     user-select: none;
     transition: 1s;
@@ -186,6 +187,14 @@ nav h1:hover {
 
 .hero #bread:hover {
     text-shadow: 0 0 2rem var(--textHighlight);
+    animation-name: rotate; 
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 .hero #name {
@@ -264,3 +273,13 @@ section h1 {
 
     }
 } */
+
+@media (max-width:500px) {
+    nav{
+        border-bottom: 1px solid var(--textHighlight);
+    }
+    .menu{
+        display: none;
+    }
+    
+}
