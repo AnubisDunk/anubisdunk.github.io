@@ -4,6 +4,7 @@
     --textmain: #ffffff;
     --textHighlight: #dd4444;
     --green: #86bf3d;
+    --gold:#FFD700;
 
 }
 
@@ -60,19 +61,24 @@ header{
 #content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 section{
     display: flex;
+    justify-content: center;
+    width: 100%;
     flex-wrap: wrap;
 
 }
 section h1{
-    flex: 0 0 100%; /* flex-grow, flex-shrink, flex-basis */
+    flex: 0 0 100%;
+    position: relative;
+    text-decoration: underline 0.2rem var(--textHighlight);
 
 }
+
 .card {
     max-width: 15rem;
     margin: 1rem;
@@ -88,7 +94,16 @@ section h1{
 }
 .card:hover{
     transform: scale(1.1);
+    border: none;
     box-shadow: 0 0 1rem var(--green);
+}
+#csgo .card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 3rem var(--gold);
+}
+#rust .card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem var(--textHighlight);
 }
 .card img {
     border-radius: 1rem;
