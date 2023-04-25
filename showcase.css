@@ -10,6 +10,7 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -68,6 +69,10 @@ section{
     flex-wrap: wrap;
 
 }
+section h1{
+    flex: 0 0 100%; /* flex-grow, flex-shrink, flex-basis */
+
+}
 .card {
     max-width: 15rem;
     margin: 1rem;
@@ -76,8 +81,14 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    outline: 0.2rem solid var(--textHighlight);
+    border: 0.15rem solid var(--textHighlight);
     border-radius: 1rem;
+    transition: 1s;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem var(--green);
 }
 .card img {
     border-radius: 1rem;
@@ -105,6 +116,40 @@ main{
 }
 
 .menu a:hover {
+    background-color: var(--textHighlight);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--textHighlight);
+
+}
+footer ion-icon {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+footer a {
+    color: white;
+    transition: 1s;
+}
+
+footer a:hover {
+    color: var(--textHighlight);
+
+}
+
+#backOnTop {
+    position: fixed;
+    color:var(--textmain);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    bottom:5rem;
+    right: 5rem;
     background-color: var(--textHighlight);
 }
 

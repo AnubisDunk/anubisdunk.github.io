@@ -6,11 +6,9 @@ getSkinData();
 
 async function getSkinData() {
     try {
-        rustContent.textContent = "Loading data";
         const res = await fetch('https://anubisdunk-serverloader.onrender.com/skins');
         // const res = await fetch('http://localhost:8080/skins'); //dev
         const data = await res.json();
-        rustContent.textContent = "";
         for (const skins of data) {
             for (const skin of skins.rust)
                 rustContent.appendChild(await loadSkins(skin));
