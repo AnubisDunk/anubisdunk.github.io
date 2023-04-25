@@ -1,26 +1,27 @@
 
-
-// db.collection("skins").get().then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//         console.log(`${doc.id} => ${doc.data()}`);
-//     });
-// });
-//main
 let rustContent = document.querySelector("#rust");
+let csgoContent = document.querySelector("#csgo");
+let untContent = document.querySelector("#unturned");
 getSkinData();
 
 async function getSkinData() {
     try {
         rustContent.textContent = "Loading data";
         const res = await fetch('https://anubisdunk-serverloader.onrender.com/skins');
+        // const res = await fetch('http://localhost:8080/skins'); //dev
         const data = await res.json();
         rustContent.textContent = "";
-        for (const skin of data) {
-            rustContent.appendChild(await loadSkins(skin));
+        for (const skins of data) {
+            for (const skin of skins.rust)
+                rustContent.appendChild(await loadSkins(skin));
+            for (const skin of skins.csgo)
+                csgoContent.appendChild(await loadSkins(skin));
+            for (const skin of skins.unturned)
+                untContent.appendChild(await loadSkins(skin));
         }
     } catch (e) {
-        console.log("404")
-    }
+    console.log("404")
+}
 
 
 }
@@ -32,6 +33,9 @@ async function loadSkins(skins) {
     `;
     let div = document.createElement('div');
     div.classList.add('card');
+    div.addEventListener('click', ()=>{
+        location.href = `${skins.link}`
+    })
     div.innerHTML = card;
     return div;
 }
