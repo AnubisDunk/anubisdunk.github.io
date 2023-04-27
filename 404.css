@@ -4,7 +4,7 @@
     --textmain: #ffffff;
     --textHighlight: #dd4444;
     --green: #86bf3d;
-    --gold:#FFD700;
+    --gold: #FFD700;
 
 }
 
@@ -22,9 +22,9 @@ html {
 
 #myVideo {
     position: fixed;
-    left:0;
+    left: 0;
     bottom: 0;
-  }
+}
 
 body {
     /* font-family: 'Sofia Sans Extra Condensed', sans-serif; */
@@ -42,95 +42,45 @@ body {
     align-items: flex;
     max-width: 1280px;
     margin: 0 auto;
-    padding:0 1rem;
+    padding: 0 1rem;
     min-height: 100vh;
-    color:var(--textmain);
+    color: var(--textmain);
     position: relative;
     border-left: 0.2rem solid var(--textHighlight);
     border-right: 0.2rem solid var(--textHighlight);
     background-color: #151515c0;
-}
-header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--textHighlight);
 }
 
 #content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
 }
-section{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
 
-}
-section h1{
-    flex: 0 0 100%;
-    position: relative;
+#content h1 {
+    font-size: 10rem;
+    text-align: center;
     text-decoration: underline 0.2rem var(--textHighlight);
-
 }
 
-.card {
-    max-width: 15rem;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    outline: 0.15rem solid var(--textHighlight);
-    border-radius: 1rem;
-    transition: 1s;
-    cursor: pointer;
-}
-.card:hover{
-    transform: scale(1.1);
-    border: none;
-    box-shadow: 0 0 1rem var(--green);
-}
-#csgo .card:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 3rem var(--gold);
-}
-#rust .card:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 2rem var(--textHighlight);
-}
-.card img {
-    border-radius: 1rem;
+main {
     flex: 1;
-    width: 100%;
-    height: 100%;
 }
 
-main{
-    flex:1;
-}
-.menu {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.menu a {
+#content a {
     color: var(--textmain);
     margin: 0 16px;
     font-weight: 400;
+    font-size: 4rem;
     text-decoration: none;
     transition: 0.4s;
-    padding: 8px 16px;
+    padding: 1rem 2rem;
     border-radius: 99px;
 }
 
-.menu a:hover {
+#content a:hover {
     background-color: var(--textHighlight);
 }
 
@@ -142,6 +92,7 @@ footer {
     border-top: 1px solid var(--textHighlight);
 
 }
+
 footer ion-icon {
     font-size: 2rem;
     margin: 1rem;
@@ -159,27 +110,29 @@ footer a:hover {
 
 #backOnTop {
     position: fixed;
-    color:var(--textmain);
+    color: var(--textmain);
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    bottom:5rem;
+    bottom: 5rem;
     right: 5rem;
     background-color: var(--textHighlight);
 }
 
 @media (max-width:500px) {
-    header{
+    header {
         flex-wrap: wrap;
         justify-content: center;
         border-bottom: 1px solid var(--textHighlight);
         padding-bottom: 1rem;
     }
+
     .card {
         max-width: 8rem;
         font-size: 0.8rem;
     }
-    section{
+
+    section {
         justify-content: center;
     }
 }

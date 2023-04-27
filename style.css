@@ -75,7 +75,7 @@ nav {
     min-height: 100%;
 }
 
-.content h1{
+.content h1 {
     font-family: 'Sofia Sans Extra Condensed', sans-serif;
     display: flex;
     margin: 0;
@@ -83,31 +83,43 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
 }
-#top{
+
+#top {
     font-size: 3rem;
 }
 
-.content span:nth-child(1) {
+#code {
     color: var(--textHighlight);
     text-decoration: underline;
     font-size: 3rem;
 }
 
-.content span:nth-child(2) {
-    color: var(--green);
+#art {
     font-size: 3rem;
     position: relative;
 }
 
-.content span:nth-child(2)::after {
+#art a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+
+#art::after {
     content: "";
-    /* display: block; */
     width: 100%;
     height: 0.25rem;
     background-color: var(--green);
     left: 0;
     top: 0.6rem;
     position: absolute;
+}
+
+#art a:hover {
+    color: var(--textHighlight);
+}
+#art:hover::after{
+    color: red;
 }
 
 
@@ -187,14 +199,20 @@ nav h1:hover {
 
 .hero #bread:hover {
     text-shadow: 0 0 2rem var(--textHighlight);
-    animation-name: rotate; 
-    animation-duration: 1s; 
+    animation-name: rotate;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
 @keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hero #name {
@@ -275,11 +293,12 @@ section h1 {
 } */
 
 @media (max-width:500px) {
-    nav{
+    nav {
         border-bottom: 1px solid var(--textHighlight);
     }
-    .menu{
+
+    .menu {
         display: none;
     }
-    
+
 }
