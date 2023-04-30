@@ -6,8 +6,10 @@ getSkinData();
 
 async function getSkinData() {
     try {
-        const res = await fetch('https://anubisdunk-serverloader.onrender.com/skins');
+        // const res = await fetch('https://anubisdunk-serverloader.onrender.com/skins'); //fun but too long
         // const res = await fetch('http://localhost:8080/skins'); //dev
+        const res = await fetch('./skins.json');
+        console.log(res);
         const data = await res.json();
         for (const skins of data) {
             for (const skin of skins.rust)
