@@ -90,6 +90,8 @@ section h1{
     outline: 0.15rem solid var(--textHighlight);
     border-radius: 1rem;
     transition: 1s;
+    font-size: 0.9rem;
+    /* font-size: 1vw; */
     cursor: pointer;
 }
 .card:hover{
