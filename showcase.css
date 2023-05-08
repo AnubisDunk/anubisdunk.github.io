@@ -50,6 +50,7 @@ body {
     border-right: 0.2rem solid var(--textHighlight);
     background-color: #151515c0;
 }
+
 header{
     width: 100%;
     display: flex;
@@ -149,12 +150,12 @@ footer ion-icon {
     margin: 1rem;
 }
 
-footer a {
+footer a , #mainLink {
     color: white;
     transition: 1s;
 }
 
-footer a:hover {
+footer a:hover , #mainLink:hover {
     color: var(--textHighlight);
 
 }
