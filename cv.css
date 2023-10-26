@@ -79,7 +79,12 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+   
     /* flex-direction: column; */
+}
+.theme:last-child {
+    flex: auto;
+    
 }
 
 .theme h1 {
@@ -158,8 +163,7 @@ nav h1:hover {
     padding: 0.5rem 0;
     top: 0;
     display: flex;
-    flex-direction: column;
-
+    align-items: center;
 }
 
 .hero #bread {
